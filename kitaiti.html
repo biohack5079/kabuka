@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>kabuka</title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="">
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="">
+
+<script type="text/javascript">
+
+<!--
+
+function x(){
+
+	var e = eval(document.fm.per.value);
+	var b = eval(document.fm.pbr.value);
+	var d = eval(document.fm.dy.value);
+	
+	var x = 2*Math.pow(d/b/b/e, 1/4);
+ 
+
+if(isNaN(x)){
+	document.fm.ex.value = "算定不能";
+ 	} else {
+	document.fm.ex.value = x;
+	}	
+	
+	var q = eval(document.fm.qo.value);
+	var p = q*x;
+
+if(isNaN(p)){
+	document.fm.pr.value = "算定不能";
+ 	} else {
+	document.fm.pr.value = p;
+	}
+ 
+
+
+	var n = eval(document.fm.hy.value);
+
+	var g = b/e - b*d/100;
+	var r = x*Math.pow(1+g , n) + 0.8*(d/100)*(Math.pow(1+g , n) - 1)/g;
+	var t = r*q;
+
+if(!isNaN(r)){
+	document.fm.ex.value = r;
+	}
+
+if(!isNaN(t)){
+	document.fm.pr.value = t;
+	}
+
+}
+
+
+
+// -->
+
+</script> 
+
+
+
+</head>
+<body>
+
+
+<br/>
+<br/>
+＜株価診断＞
+<br/>
+<br/>
+
+
+<form action="#" name="fm">
+
+
+<table width="25" border="0" align="left" cellpadding="2" cellspacing="2">
+<tr>
+<td height="50"></td>
+</tr>
+</table>
+
+
+
+<table border="1" style="background-color: #ffffff;">
+
+<tr>
+<th>指標</th>
+<th>入力して下さい</th>
+</tr>
+
+<tr>
+<td align="right" colspan="1">PER</td>
+<td><input type="text" name="per" onkeyup="x()" size="10" placeholder="PER"> 倍</td>
+</tr>
+
+<tr>
+<td align="right" colspan="1">PBR</td>
+<td><input type="text" name="pbr" onkeyup="x()" size="10" placeholder="PBR"> 倍</td>
+</tr>
+
+<tr>
+<td align="right" colspan="1">配当利回り</td>
+<td><input type="text" name="dy" onkeyup="x()" size="10" placeholder="配当利回り"> ％</td>
+</tr>
+
+<tr>
+<td align="right" colspan="1">期待値</td>
+<td><input type="text" name="ex" onkeyup="x()" size="10" placeholder="期待値"> 倍</td>
+</tr>
+
+<tr>
+<td align="right" colspan="1">株価</td>
+<td><input type="text" name="qo" onkeyup="x()" size="10" placeholder="株価"> 円</td>
+</tr>
+
+<tr>
+<td align="right" colspan="1"><strong>目標株価</strong></td>
+<td><input type="text" name="pr" onkeyup="x()" size="10" placeholder="目標株価"> 円</td>
+</tr>
+
+<tr>
+<td align="right" colspan="1">保有年数</td>
+<td><input type="text" name="hy" onkeyup="x()" size="10" placeholder="保有年数"> 年</td>
+</tr>
+
+</table>
+
+
+</form>
+</body>
+</html>
