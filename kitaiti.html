@@ -35,7 +35,7 @@ if(isNaN(x)){
 	}	
 	
 	var q = eval(document.fm.qo.value);
-	var p = q*x;
+	var p = x*q;
 
 if(isNaN(p)){
 	document.fm.pr.value = "算定不能";
@@ -48,7 +48,7 @@ if(isNaN(p)){
 	var n = eval(document.fm.hy.value);
 
 	var g = b/e - b*d/100;
-	var r = x*Math.pow(1+g , n) + 0.8*(d/100)*(Math.pow(1+g , n) - 1)/g;
+	var r = x*Math.pow(1+g,n) + 0.8*(d/100)*(Math.pow(1+g,n)-1)/g;
 	var t = r*q;
 
 if(!isNaN(r)){
@@ -59,6 +59,11 @@ if(!isNaN(t)){
 	document.fm.pr.value = t;
 	}
 
+}
+
+
+function re() {
+	document.fm.reset();
 }
 
 
@@ -75,7 +80,7 @@ if(!isNaN(t)){
 
 <br/>
 <br/>
-＜株価診断＞
+＜期待値計算＞
 <br/>
 <br/>
 
@@ -134,6 +139,10 @@ if(!isNaN(t)){
 </tr>
 
 </table>
+
+<p>
+<button type="button" onclick="re()">リセット</button>
+</p>
 
 
 </form>
